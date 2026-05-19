@@ -86,7 +86,7 @@ export default function Home() {
         >
           <span
             aria-hidden="true"
-            className="relative inline-flex h-7 w-7 overflow-hidden rounded-[6px] shadow-[0_2px_8px_-4px_rgba(15,14,12,0.25)]"
+            className="relative inline-flex h-10 w-10 overflow-hidden rounded-[8px] shadow-[0_2px_10px_-4px_rgba(15,14,12,0.3)] sm:h-7 sm:w-7 sm:rounded-[6px] sm:shadow-[0_2px_8px_-4px_rgba(15,14,12,0.25)]"
           >
             <svg viewBox="0 0 64 64" className="h-full w-full">
               <rect width="64" height="64" fill="#F5F1E8" />
@@ -104,7 +104,7 @@ export default function Home() {
             </svg>
           </span>
           <span
-            className="text-[16px] tracking-tight"
+            className="text-[18px] tracking-tight sm:text-[16px]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Cifras <span style={{ fontStyle: "italic", color: "var(--color-mute)" }}>de</span> España
@@ -158,9 +158,15 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap items-center gap-4 text-[13px]">
             <a
               href="#webs"
-              className="group relative inline-flex min-h-12 items-center gap-3 overflow-hidden rounded-full bg-[var(--color-ink)] px-5 text-[var(--color-paper)] transition-transform active:translate-y-px"
+              className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-[var(--color-ink)] px-5 text-[var(--color-paper)] transition-transform active:translate-y-px"
             >
-              <span>Ver las siete webs</span>
+              <span>
+                Las{" "}
+                <span className="font-mono tabular text-[var(--color-accent)]">
+                  7
+                </span>{" "}
+                webs
+              </span>
               <svg
                 viewBox="0 0 16 16"
                 aria-hidden="true"
@@ -174,16 +180,18 @@ export default function Home() {
                   d="M2 8h11M9 4l4 4-4 4"
                 />
               </svg>
-              <span
-                aria-hidden="true"
-                className="absolute right-[18px] top-1/2 -mt-[3px] h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              />
             </a>
             <a
               href="#fuentes"
               className="group inline-flex min-h-12 items-center gap-2 px-1 text-[var(--color-ink-soft)] underline decoration-[var(--color-line)] decoration-1 underline-offset-[6px] transition-colors hover:text-[var(--color-ink)] hover:decoration-[var(--color-accent)]"
             >
-              <span>Las <strong className="font-medium tabular text-[var(--color-ink)] group-hover:text-[var(--color-accent)] transition-colors">{TOTAL_SOURCES}</strong> fuentes</span>
+              <span>
+                Las{" "}
+                <span className="font-mono tabular text-[var(--color-accent)]">
+                  {TOTAL_SOURCES}
+                </span>{" "}
+                fuentes
+              </span>
             </a>
           </div>
         </div>

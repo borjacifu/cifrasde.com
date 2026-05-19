@@ -81,6 +81,13 @@
     will-change: transform;
   }
 
+  /* Mobile: marquee runs twice as fast */
+  @media (max-width: 640px) {
+    .marquee-track {
+      animation-duration: 30s;
+    }
+  }
+
   /* Staggered entrance — purely CSS, transform/opacity only */
   @keyframes rise {
     from {
