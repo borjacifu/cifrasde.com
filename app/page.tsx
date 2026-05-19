@@ -81,23 +81,39 @@ export default function Home() {
       <header className="flex items-center justify-between border-b hairline pb-5 pt-6 sm:pt-8">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2.5"
+          className="group inline-flex items-center gap-3"
           aria-label="Cifras de España"
         >
           <span
             aria-hidden="true"
-            className="relative inline-flex h-2 w-2 items-center justify-center"
+            className="relative inline-flex h-7 w-7 overflow-hidden rounded-[6px] shadow-[0_2px_8px_-4px_rgba(15,14,12,0.25)]"
           >
-            <span className="absolute inset-0 rounded-full bg-[var(--color-accent)] breathe" />
-            <span className="relative h-2 w-2 rounded-full bg-[var(--color-accent)]" />
+            <svg viewBox="0 0 64 64" className="h-full w-full">
+              <rect width="64" height="64" fill="#F5F1E8" />
+              <text
+                x="32"
+                y="46"
+                fontFamily="Georgia, 'Times New Roman', serif"
+                fontSize="44"
+                textAnchor="middle"
+                fill="#0F0E0C"
+              >
+                C
+              </text>
+              <circle cx="49" cy="20" r="4" fill="#B4561F" />
+            </svg>
           </span>
-          <span className="text-[15px] font-medium tracking-tight">
-            Cifras de España
+          <span
+            className="text-[16px] tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Cifras <span style={{ fontStyle: "italic", color: "var(--color-mute)" }}>de</span> España
           </span>
         </Link>
 
-        <span className="hidden text-[13px] text-[var(--color-mute)] sm:inline-flex">
-          Hub editorial
+        <span className="hidden items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-mute)] sm:inline-flex">
+          <span className="ocre-dot" aria-hidden="true" />
+          <span>Hub editorial · 2026</span>
         </span>
       </header>
 
@@ -106,7 +122,7 @@ export default function Home() {
         <div className="marquee-track flex whitespace-nowrap py-2 text-[11px] uppercase tracking-[0.2em] text-[var(--color-mute)]">
           {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((t, i) => (
             <span key={i} className="px-6">
-              · {t}
+              <span className="eyebrow-sep">·</span> {t}
             </span>
           ))}
         </div>
@@ -118,16 +134,20 @@ export default function Home() {
         className="grid grid-cols-1 gap-10 border-b hairline py-14 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-28"
       >
         <div className="lg:col-span-7 rise" style={{ ["--i" as string]: 0 }}>
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-            Edición · 2026
+          <p className="inline-flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
+            <span className="ocre-dot" aria-hidden="true" />
+            <span>Edición <span className="eyebrow-sep">·</span> 2026</span>
           </p>
-          <h1 className="mt-5 text-[40px] font-medium leading-[1.02] tracking-[-0.02em] sm:text-[58px] lg:text-[76px]">
+          <h1
+            className="mt-5 text-[42px] leading-[1.02] tracking-[-0.025em] sm:text-[62px] lg:text-[82px]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+          >
             Las cifras que
             <br />
-            <span className="italic font-normal text-[var(--color-ink-soft)]">
+            <span className="italic text-[var(--color-mute)]">
               explican
             </span>{" "}
-            España.
+            <span className="ocre-underline">España</span>.
           </h1>
           <p className="mt-7 max-w-[58ch] text-[17px] leading-relaxed text-[var(--color-ink-soft)] sm:text-[18px]">
             Una red de <strong className="font-medium text-[var(--color-ink)]">siete webs</strong>{" "}
@@ -138,19 +158,32 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap items-center gap-4 text-[13px]">
             <a
               href="#webs"
-              className="group inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[var(--color-ink)] px-5 text-[var(--color-paper)] transition-transform active:translate-y-px"
+              className="group relative inline-flex min-h-12 items-center gap-3 overflow-hidden rounded-full bg-[var(--color-ink)] px-5 text-[var(--color-paper)] transition-transform active:translate-y-px"
             >
               <span>Ver las siete webs</span>
+              <svg
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                className="nudge h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="square"
+                  d="M2 8h11M9 4l4 4-4 4"
+                />
+              </svg>
               <span
                 aria-hidden="true"
-                className="inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-paper)] transition-transform duration-300 ease-out group-hover:translate-x-0.5"
+                className="absolute right-[18px] top-1/2 -mt-[3px] h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               />
             </a>
             <a
               href="#fuentes"
-              className="group inline-flex min-h-12 items-center gap-2 px-1 text-[var(--color-ink-soft)] underline decoration-[var(--color-line)] decoration-1 underline-offset-[6px] transition-colors hover:text-[var(--color-ink)] hover:decoration-[var(--color-ink)]"
+              className="group inline-flex min-h-12 items-center gap-2 px-1 text-[var(--color-ink-soft)] underline decoration-[var(--color-line)] decoration-1 underline-offset-[6px] transition-colors hover:text-[var(--color-ink)] hover:decoration-[var(--color-accent)]"
             >
-              <span>Las {TOTAL_SOURCES} fuentes</span>
+              <span>Las <strong className="font-medium tabular text-[var(--color-ink)] group-hover:text-[var(--color-accent)] transition-colors">{TOTAL_SOURCES}</strong> fuentes</span>
             </a>
           </div>
         </div>
@@ -181,11 +214,12 @@ export default function Home() {
       >
         <div className="lg:col-span-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-            01 · Qué hacemos
+            <span className="tabular">01</span> <span className="eyebrow-sep">·</span> Qué hacemos
           </p>
           <h2
             id="manifiesto"
-            className="mt-5 text-[28px] font-medium leading-[1.1] tracking-tight sm:text-[34px]"
+            className="mt-5 text-[30px] leading-[1.08] tracking-[-0.015em] sm:text-[38px]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
           >
             Datos brutos del Estado, leídos como prensa.
           </h2>
@@ -218,11 +252,12 @@ export default function Home() {
         <div className="mb-10 flex items-end justify-between gap-6 sm:mb-14">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-              02 · La red
+              <span className="tabular">02</span> <span className="eyebrow-sep">·</span> La red
             </p>
             <h2
               id="webs-title"
-              className="mt-5 text-[28px] font-medium leading-[1.1] tracking-tight sm:text-[34px]"
+              className="mt-5 text-[30px] leading-[1.08] tracking-[-0.015em] sm:text-[38px]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
               Siete webs, siete temas.
             </h2>
@@ -239,11 +274,11 @@ export default function Home() {
                 href={site.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full min-h-[180px] flex-col justify-between gap-6 p-6 transition-colors hover:bg-[var(--color-cream)] sm:p-7"
+                className="group lift-card flex h-full min-h-[180px] flex-col justify-between gap-6 p-6 hover:bg-[var(--color-cream)] sm:p-7"
                 aria-label={`Ir a ${site.domain}`}
               >
                 <div className="flex items-start justify-between">
-                  <span className="font-mono text-[12px] tabular text-[var(--color-mute)]">
+                  <span className="font-mono text-[12px] tabular text-[var(--color-mute)] transition-colors duration-300 group-hover:text-[var(--color-accent)]">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                   <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-mute)]">
@@ -263,28 +298,13 @@ export default function Home() {
 
                 <div className="flex items-center justify-between border-t hairline pt-4 text-[12px] text-[var(--color-mute)]">
                   <span className="font-mono">{site.domain}</span>
-                  <ArrowOut />
+                  <span className="text-[var(--color-mute)] transition-colors duration-300 group-hover:text-[var(--color-accent)]">
+                    <ArrowOut />
+                  </span>
                 </div>
               </a>
             </li>
           ))}
-          {/* Empty cell to round the 7-card grid on desktop */}
-          <li
-            aria-hidden="true"
-            className="hidden bg-[var(--color-cream)] lg:flex lg:items-center lg:justify-center"
-          >
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-              fin de la red
-            </span>
-          </li>
-          <li
-            aria-hidden="true"
-            className="hidden bg-[var(--color-cream)] sm:flex sm:items-center sm:justify-center sm:p-7 lg:hidden"
-          >
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-              fin de la red
-            </span>
-          </li>
         </ul>
       </section>
 
@@ -297,13 +317,14 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-              03 · Fuentes
+              <span className="tabular">03</span> <span className="eyebrow-sep">·</span> Fuentes
             </p>
             <h2
               id="fuentes-title"
-              className="mt-5 text-[28px] font-medium leading-[1.1] tracking-tight sm:text-[34px]"
+              className="mt-5 text-[30px] leading-[1.08] tracking-[-0.015em] sm:text-[38px]"
+              style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
-              {TOTAL_SOURCES} organismos públicos.
+              <span className="shimmer-accent tabular">{TOTAL_SOURCES}</span> organismos públicos.
             </h2>
             <p className="mt-6 max-w-[40ch] text-[16px] leading-relaxed text-[var(--color-ink-soft)]">
               Cifras de España agrega información de {TOTAL_SOURCES} fuentes
@@ -321,7 +342,7 @@ export default function Home() {
                     {group.label}
                   </h3>
                   <div className="h-px flex-1 bg-[var(--color-line)]" />
-                  <span className="font-mono text-[12px] text-[var(--color-mute)]">
+                  <span className="font-mono text-[12px] tabular text-[var(--color-accent)]">
                     {String(group.items.length).padStart(2, "0")}
                   </span>
                 </div>
@@ -346,11 +367,12 @@ export default function Home() {
       >
         <div className="mb-10 sm:mb-14">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
-            04 · Redes
+            <span className="tabular">04</span> <span className="eyebrow-sep">·</span> Redes
           </p>
           <h2
             id="rrss-title"
-            className="mt-5 text-[28px] font-medium leading-[1.1] tracking-tight sm:text-[34px]"
+            className="mt-5 text-[30px] leading-[1.08] tracking-[-0.015em] sm:text-[38px]"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
           >
             La cifra del día,
             <br className="sm:hidden" /> donde tú lees.
@@ -364,11 +386,15 @@ export default function Home() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full min-h-[160px] flex-col justify-between gap-8 p-7 transition-colors hover:bg-[var(--color-cream)]"
+                className="group lift-card flex h-full min-h-[160px] flex-col justify-between gap-8 p-7 hover:bg-[var(--color-cream)]"
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-[var(--color-ink)]">{s.icon}</span>
-                  <ArrowOut />
+                  <span className="text-[var(--color-ink)] transition-colors duration-300 group-hover:text-[var(--color-accent)]">
+                    {s.icon}
+                  </span>
+                  <span className="text-[var(--color-mute)] transition-colors duration-300 group-hover:text-[var(--color-accent)]">
+                    <ArrowOut />
+                  </span>
                 </div>
                 <div>
                   <div className="flex items-baseline gap-3">
@@ -393,9 +419,27 @@ export default function Home() {
       <footer className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-3 sm:py-16">
         <div>
           <Link href="/" className="inline-flex items-center gap-2.5">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-accent)]" />
-            <span className="text-[14px] font-medium tracking-tight">
-              Cifras de España
+            <span className="relative inline-flex h-5 w-5 overflow-hidden rounded-[4px]">
+              <svg viewBox="0 0 64 64" className="h-full w-full">
+                <rect width="64" height="64" fill="#F5F1E8" />
+                <text
+                  x="32"
+                  y="46"
+                  fontFamily="Georgia, 'Times New Roman', serif"
+                  fontSize="44"
+                  textAnchor="middle"
+                  fill="#0F0E0C"
+                >
+                  C
+                </text>
+                <circle cx="49" cy="20" r="4" fill="#B4561F" />
+              </svg>
+            </span>
+            <span
+              className="text-[15px] tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Cifras <span style={{ fontStyle: "italic", color: "var(--color-mute)" }}>de</span> España
             </span>
           </Link>
           <p className="mt-3 max-w-[34ch] text-[13px] leading-relaxed text-[var(--color-mute)]">
@@ -427,12 +471,18 @@ export default function Home() {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="bg-[var(--color-paper)] p-5 sm:p-6">
+    <div className="group relative bg-[var(--color-paper)] p-5 transition-colors duration-300 hover:bg-[var(--color-cream)] sm:p-6">
       <dt className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-mute)]">
         {label}
       </dt>
-      <dd className="mt-2 font-mono text-[28px] tabular text-[var(--color-ink)] sm:text-[32px]">
-        {value}
+      <dd className="mt-2 inline-block font-mono text-[28px] tabular text-[var(--color-ink)] sm:text-[32px]">
+        <span className="relative">
+          {value}
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[var(--color-accent)] transition-[width] duration-500 ease-out group-hover:w-full"
+          />
+        </span>
       </dd>
     </div>
   );

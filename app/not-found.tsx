@@ -6,10 +6,13 @@ export default function NotFound() {
       <p className="font-mono text-[12px] uppercase tracking-[0.25em] text-[var(--color-mute)]">
         Error · 404
       </p>
-      <h1 className="mt-5 text-[44px] font-medium leading-[1.05] tracking-tight sm:text-[64px]">
+      <h1
+        className="mt-5 text-[44px] leading-[1.05] tracking-[-0.02em] sm:text-[64px]"
+        style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+      >
         Esta cifra
         <br />
-        no existe.
+        <span className="italic text-[var(--color-mute)]">no existe.</span>
       </h1>
       <p className="mt-6 max-w-[44ch] text-[16px] leading-relaxed text-[var(--color-ink-soft)]">
         La página que buscas no está publicada. Vuelve al índice y elige

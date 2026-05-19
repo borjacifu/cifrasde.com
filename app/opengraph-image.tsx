@@ -14,69 +14,120 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "72px 80px",
-          background: "#ffffff",
-          color: "#18181b",
-          fontFamily: "system-ui, sans-serif",
+          padding: "60px 72px",
+          background: "#F5F1E8",
+          color: "#0F0E0C",
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          position: "relative",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        {/* Top hairline */}
+        <div
+          style={{
+            position: "absolute",
+            top: 48,
+            left: 72,
+            right: 72,
+            height: 1,
+            background: "#0F0E0C",
+            opacity: 0.22,
+          }}
+        />
+        {/* Bottom hairline */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 48,
+            left: 72,
+            right: 72,
+            height: 1,
+            background: "#0F0E0C",
+            opacity: 0.22,
+          }}
+        />
+
+        {/* Top row: corner labels */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            fontSize: 16,
+            letterSpacing: 5,
+            color: "#6B6258",
+            fontFamily: "ui-monospace, Menlo, Consolas, monospace",
+            textTransform: "uppercase",
+          }}
+        >
+          <span>Núm · 01 · MMXXVI</span>
+          <span>Edición · 2026</span>
+        </div>
+
+        {/* Hero wordmark — centered */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
+          }}
+        >
           <div
             style={{
-              width: 12,
-              height: 12,
-              borderRadius: 9999,
-              background: "#991b1b",
-            }}
-          />
-          <span style={{ fontSize: 22, fontWeight: 500, letterSpacing: -0.4 }}>
-            Cifras de España
-          </span>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <span
-            style={{
-              fontSize: 18,
-              letterSpacing: 4,
-              textTransform: "uppercase",
-              color: "#71717a",
-              fontFamily: "ui-monospace, Menlo, monospace",
+              fontSize: 140,
+              lineHeight: 1.04,
+              letterSpacing: -4,
+              fontWeight: 400,
+              display: "flex",
+              alignItems: "baseline",
+              position: "relative",
             }}
           >
-            Edición · 2026
-          </span>
-          <h1
+            <span>Cifras</span>
+            <span style={{ fontStyle: "italic", color: "#6B6258", margin: "0 16px" }}>de</span>
+            <span>España</span>
+            {/* Accent dot */}
+            <div
+              style={{
+                position: "absolute",
+                top: 8,
+                right: -28,
+                width: 16,
+                height: 16,
+                borderRadius: "50%",
+                background: "#B4561F",
+              }}
+            />
+          </div>
+          <div
             style={{
-              fontSize: 116,
-              lineHeight: 1.02,
-              fontWeight: 500,
-              letterSpacing: -3,
-              margin: "20px 0 0",
-              maxWidth: 1000,
+              fontStyle: "italic",
+              color: "#6B6258",
+              fontSize: 30,
+              marginTop: 24,
+              letterSpacing: -0.5,
             }}
           >
-            Las cifras que
-            <br />
-            explican España.
-          </h1>
+            datos públicos, leídos despacio
+          </div>
         </div>
 
+        {/* Bottom row: meta */}
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            paddingTop: 28,
-            borderTop: "1px solid #e4e4e7",
-            fontSize: 20,
-            color: "#71717a",
+            fontSize: 18,
+            color: "#6B6258",
+            fontFamily: "ui-monospace, Menlo, Consolas, monospace",
+            letterSpacing: 3,
+            textTransform: "uppercase",
           }}
         >
           <span>cifrasde.com</span>
-          <span style={{ fontFamily: "ui-monospace, Menlo, monospace" }}>
-            07 webs · 37 fuentes públicas
-          </span>
+          <span>07 observatorios · 37 fuentes</span>
         </div>
       </div>
     ),
