@@ -424,53 +424,82 @@ export default function Home() {
       </section>
 
       {/* ─────────────────────────── Footer ─────────────────────────── */}
-      <footer className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-3 sm:py-16">
-        <div>
-          <Link href="/" className="inline-flex items-center gap-2.5">
-            <span className="relative inline-flex h-5 w-5 overflow-hidden rounded-[4px]">
-              <svg viewBox="0 0 64 64" className="h-full w-full">
-                <rect width="64" height="64" fill="#F5F1E8" />
-                <text
-                  x="32"
-                  y="46"
-                  fontFamily="Georgia, 'Times New Roman', serif"
-                  fontSize="44"
-                  textAnchor="middle"
-                  fill="#0F0E0C"
-                >
-                  C
-                </text>
-                <circle cx="49" cy="20" r="4" fill="#B4561F" />
-              </svg>
-            </span>
-            <span
-              className="text-[15px] tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
+      <footer className="py-12 sm:py-16">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <span className="relative inline-flex h-5 w-5 overflow-hidden rounded-[4px]">
+                <svg viewBox="0 0 64 64" className="h-full w-full">
+                  <rect width="64" height="64" fill="#F5F1E8" />
+                  <text
+                    x="32"
+                    y="46"
+                    fontFamily="Georgia, 'Times New Roman', serif"
+                    fontSize="44"
+                    textAnchor="middle"
+                    fill="#0F0E0C"
+                  >
+                    C
+                  </text>
+                  <circle cx="49" cy="20" r="4" fill="#B4561F" />
+                </svg>
+              </span>
+              <span
+                className="text-[15px] tracking-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Cifras <span style={{ fontStyle: "italic", color: "var(--color-mute)" }}>de</span> España
+              </span>
+            </Link>
+            <p className="mt-3 max-w-[34ch] text-[13px] leading-relaxed text-[var(--color-mute)]">
+              Proyecto editorial independiente. Datos públicos, leídos
+              despacio.
+            </p>
+          </div>
+
+          <div className="sm:text-center">
+            <p className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-mute)]">
+              Contacto
+            </p>
+            <a
+              href="mailto:hola@cifrasde.com"
+              className="mt-2 inline-block text-[14px] underline decoration-[var(--color-line)] decoration-1 underline-offset-[5px] transition-colors hover:decoration-[var(--color-ink)]"
             >
-              Cifras <span style={{ fontStyle: "italic", color: "var(--color-mute)" }}>de</span> España
-            </span>
-          </Link>
-          <p className="mt-3 max-w-[34ch] text-[13px] leading-relaxed text-[var(--color-mute)]">
-            Proyecto editorial independiente. Datos públicos, leídos
-            despacio.
-          </p>
+              hola@cifrasde.com
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-1 text-[12px] text-[var(--color-mute)] sm:items-end">
+            <span className="font-mono">© {year} Cifras de España</span>
+            <span>Hecho en Madrid · publicado en abierto</span>
+          </div>
         </div>
 
-        <div className="sm:text-center">
-          <p className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-mute)]">
-            Contacto
-          </p>
-          <a
-            href="mailto:hola@cifrasde.com"
-            className="mt-2 inline-block text-[14px] underline decoration-[var(--color-line)] decoration-1 underline-offset-[5px] transition-colors hover:decoration-[var(--color-ink)]"
+        <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 border-t hairline pt-6 text-[12px] text-[var(--color-mute)]">
+          <Link
+            href="/aviso-legal"
+            className="underline decoration-[var(--color-line)] decoration-1 underline-offset-[5px] transition-colors hover:decoration-[var(--color-ink)] hover:text-[var(--color-ink)]"
           >
-            hola@cifrasde.com
-          </a>
-        </div>
-
-        <div className="flex flex-col gap-1 text-[12px] text-[var(--color-mute)] sm:items-end">
-          <span className="font-mono">© {year} Cifras de España</span>
-          <span>Hecho en Madrid · publicado en abierto</span>
+            Aviso legal
+          </Link>
+          <Link
+            href="/privacidad"
+            className="underline decoration-[var(--color-line)] decoration-1 underline-offset-[5px] transition-colors hover:decoration-[var(--color-ink)] hover:text-[var(--color-ink)]"
+          >
+            Privacidad
+          </Link>
+          <Link
+            href="/cookies"
+            className="underline decoration-[var(--color-line)] decoration-1 underline-offset-[5px] transition-colors hover:decoration-[var(--color-ink)] hover:text-[var(--color-ink)]"
+          >
+            Cookies
+          </Link>
+          <Link
+            href="/terminos"
+            className="underline decoration-[var(--color-line)] decoration-1 underline-offset-[5px] transition-colors hover:decoration-[var(--color-ink)] hover:text-[var(--color-ink)]"
+          >
+            Términos
+          </Link>
         </div>
       </footer>
     </main>
