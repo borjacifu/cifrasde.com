@@ -93,6 +93,7 @@ export default function RootLayout({
       "https://x.com/cifrasdees",
       "https://www.tiktok.com/@cifrasdees",
       "https://www.youtube.com/@CifrasdeEspaña",
+      "https://instagram.com/cifrasde_es",
     ],
     contactPoint: [
       {
