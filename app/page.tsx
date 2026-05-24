@@ -47,7 +47,7 @@ const SOCIAL = [
   {
     name: "Instagram",
     handle: "@cifrasde_es",
-    href: "https://instagram.com/cifrasde_es",
+    href: "https://www.instagram.com/cifrasde_es",
     blurb: "Carruseles visuales con datos del día, semana y mes.",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
@@ -279,7 +279,7 @@ export default function Home() {
             <h2
               id="webs-title"
               className="mt-5 text-[30px] leading-[1.08] tracking-[-0.015em] sm:text-[38px]"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
+              style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
               Siete webs, siete temas.
             </h2>
@@ -409,6 +409,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group lift-card flex h-full min-h-[160px] flex-col justify-between gap-8 p-7 hover:bg-[var(--color-cream)]"
+                aria-label={`Abrir ${s.name} de Cifras de España`}
               >
                 <div className="flex items-start justify-between">
                   <span className="text-[var(--color-ink)] transition-colors duration-300 group-hover:text-[var(--color-accent)]">
